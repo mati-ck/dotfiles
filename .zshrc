@@ -197,7 +197,7 @@ bindkey '^l' _my_clear
 
 # aliases
 
-alias config='/usr/bin/git --git-dir=/home/mati/dotfiles --work-tree=/home/mati' 
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME' 
 
 # Ctrl-O opens zsh at the current location, and on exit, cd into ranger's last location.
 ranger-cd() {
