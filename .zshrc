@@ -1,13 +1,15 @@
+export LANG="en_US.UTF-8"
+
 # Path to your oh-my-zsh installation.
-ZSH=/usr/share/oh-my-zsh/
+ZSH=$HOME/.oh-my-zsh/
 
 export DEFAULT_USER="mati"
 export TERM="xterm-256color"
-export ZSH=/usr/share/oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE="nerdfont-complete"
-source $ZSH/themes/powerlevel9k/powerlevel9k.zsh-theme
+source $ZSH/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 
 # Set P9KGT background color, either 'light' or 'dark' (this should match the GNOME Terminal's theme).
 P9KGT_BACKGROUND='dark'
