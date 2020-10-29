@@ -1,7 +1,8 @@
-git clone --bare git@github.com:mati-ck/dotfiles.git $HOME/.dotfiles
+git clone --bare git@github.com:mati-ck/dotfiles.git $HOME/.cfg
 function config {
    /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
 }
+echo ".dotfiles" >> .gitignore
 mkdir -p .config-backup
 config checkout
 if [ $? = 0 ]; then
