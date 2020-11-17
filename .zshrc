@@ -149,7 +149,8 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(archlinux 
 	asdf 
 	bundler 
-	docker 
+	docker
+	git 
 	jsontools 
 	vscode 
 	web-search 
@@ -201,6 +202,22 @@ bindkey '^l' _my_clear
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME' 
 
+alias dash-sf='az aks browse --resource-group dev.kubernetes --name Sourceful'
+alias dash-conveniunt='az aks browse --resource-group Conveniunt --name conveniunt-dev-demo-cluster'
+
+## Kubernetes
+alias kubeswitch-sf='kubectl config set-context sourceful'
+alias kubeswitch-sf-dev='kubectl config set-context sourceful --namespace=dev'
+alias kubeswitch-sf-demo='kubectl config set-context sourceful --namespace=demo'
+
+alias kubeswitch-conveniunt='kubectl config set-context conveniunt-dev-demo-cluster'
+alias kubeswitch-conveniunt-dev='kubectl config set-context conveniunt-dev-demo-cluster --namespace=dev'
+alias kubeswitch-conveniunt-demo='kubectl config set-context conveniunt-dev-demo-cluster --namespace=demo'
+
+## Azure
+alias swich-subscription-conveniunt='az account set --subscription d7614fa7-31d2-4a96-b9cc-cce07e1062ac'
+alias swich-subscription-sourceful='az account set --subscription 2fcc5684-9dcc-4850-b2c7-d00af47f1f35'
+
 # Ctrl-O opens zsh at the current location, and on exit, cd into ranger's last location.
 ranger-cd() {
 	tempfile=$(mktemp)
@@ -223,5 +240,9 @@ ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
+
+	[[ -s /home/mati/.autojump/etc/profile.d/autojump.sh ]] && source /home/mati/.autojump/etc/profile.d/autojump.sh
+
+	autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
